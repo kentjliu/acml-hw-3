@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CIFAR-10 Image Classifier</h1>
+        <div class="upload-container">
+            <label for="imageUpload" class="upload-label">
+                <div id="dropArea">
+                    <p>Drag & drop an image here or click to upload</p>
+                    <div id="preview"></div>
+                </div>
+            </label>
+            <input type="file" id="imageUpload" accept="image/*" hidden>
+        </div>
+        <button id="classifyBtn" disabled>Classify Image</button>
+        <div class="result-container">
+            <h2>Classification Result</h2>
+            <div id="result">
+                <p>Upload an image to see classification results</p>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
