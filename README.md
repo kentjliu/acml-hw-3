@@ -1,4 +1,8 @@
 # acml-hw-3
+For the purpose of this assignment, the app will be a simple application which takes in an image as input and ouputs the predicted class. The classifier is trained on the commonly-used CIFAR-10 dataset and classifies from: `airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck`.
+
+
+# Workflow
 
 ## Get a Cluster
 Personally, the hardest part of this project was getting my hands on a Kubernetes cluster with a GPU. Initially, I was running this command in the Google Cloud Terminal and hoping it worked
@@ -16,4 +20,16 @@ To account for this issue, I decided to write a script which automates the searc
 As per the description, I have a simple training program for a CNN, a docker file, and a training job yaml file.
 
 ## Frontend and Application
-With the help of AI, I was able to create a simple frontend which uses the served model.
+With the help of AI, I was able to create a simple frontend which uses the served model for simple image classification.
+
+# Build Application
+```
+cd ../training
+docker build -t gcr.io/$PROJECT_ID/training-image:latest .
+docker push gcr.io/$PROJECT_ID/training-image:latest
+```
+```
+cd ../inference
+docker build -t gcr.io/$PROJECT_ID/inference-image:latest .
+docker push gcr.io/$PROJECT_ID/inference-image:latest
+```
