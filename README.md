@@ -15,3 +15,5 @@ To account for this issue, I decided to write a script which automates the searc
 ## Training and Inference Components
 As per the description, I have a simple training program for a CNN, a docker file, and a training job yaml file.
 
+## Frontend and Application
+With the help of AI, I was able to create a simple frontend which uses the served model.
