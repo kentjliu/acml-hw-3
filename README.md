@@ -12,8 +12,6 @@ Unfortunately, it did not immediately work. After running it and changing the zo
 To account for this issue, I decided to write a script which automates the search process. Even then, it took a long time so I decided to paralellize it and eventually was able to get my hands on two GPU clusters with 1 node. This code can be found in `create_kub_cluster.ipynb`
 
 
-## Training component
+## Training and Inference Components
 As per the description, I have a simple training program for a CNN, a docker file, and a training job yaml file.
 
-* `train.py`
-*
