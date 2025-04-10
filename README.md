@@ -3,7 +3,17 @@ For the purpose of this assignment, the app will be a simple application which t
 
 
 # Workflow
+When a user logs in, they are greeted with a simple UI
+![alt text](https://github.com/kentjliu/acml-hw-3/blob/main/etc/start-screen.png "Logo Title Text 1")
 
+They can then upload an image. In this case, it is a dancing cat.
+![alt text](https://github.com/kentjliu/acml-hw-3/blob/main/etc/image_upload.png "Logo Title Text 1")
+
+
+The app returns a classification with a confidence score (from softmax layer)!
+![alt text](https://github.com/kentjliu/acml-hw-3/blob/main/etc/get-result.png "Logo Title Text 1")
+
+# Steps
 ## Get a Cluster
 Personally, the hardest part of this project was getting my hands on a Kubernetes cluster with a GPU. Initially, I was running this command in the Google Cloud Terminal and hoping it worked
 
