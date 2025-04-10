@@ -7,6 +7,5 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 10Gi
-  storageClassName: standard-rwo
-  
+      storage: 1Gi
+  storageClassName: standard

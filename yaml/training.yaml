@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: model-train
+spec:
+  template:
+    spec:
+      containers:
+      - name: training-container
+        image: gcr.io/apmlic-hw2/training-image:latest
+        env:
+        - name: MODEL_PATH
+          value: "/models/img_model.pth"
+        volumeMounts:
+        - name: model-storage
+          mountPath: /models
+      volumes:
+      - name: model-storage
+        persistentVolumeClaim:
+          claimName: model-storage-pvc
+      restartPolicy: Never
+  backoffLimit: 2
+
