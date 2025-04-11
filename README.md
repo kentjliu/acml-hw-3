@@ -32,14 +32,29 @@ As per the description, I have a simple training program for a CNN, a docker fil
 ## Frontend and Application
 With the help of AI, I was able to create a simple frontend which uses the served model for simple image classification.
 
-# Build Application
+# Steps to Build and Run Application
+(These are the params I used)
 ```
-cd ../training
+gcloud container clusters get-credentials acml-hw-3-gpu --zone asia-northeast1-a --project hpml-435803
+```
+Push the training image
+```
+cd training
 docker build -t gcr.io/$PROJECT_ID/training-image:latest .
 docker push gcr.io/$PROJECT_ID/training-image:latest
 ```
+Push the inference image
 ```
 cd ../inference
 docker build -t gcr.io/$PROJECT_ID/inference-image:latest .
 docker push gcr.io/$PROJECT_ID/inference-image:latest
 ```
+Apply PVC and deploy both training and inference jobs
+```
+cd ../yaml
+kubectl apply -f pvc.yaml
+kubectl apply -f training.yaml
+kubectl apply -f inference.yaml
+kubectl get service model-infer-service
+```
+Finally, we can go to our favorite browser and go to https://[INSERT EXTERNAL IP] and classify images!
